@@ -1,0 +1,48 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+   Annuaire - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Annuaire</h2>
+  
+  <hr>
+
+  <div class="btn-group">
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'a' } ) }}">a</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'b' } ) }}">b</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'c' } ) }}">c</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'd' } ) }}">d</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'e' } ) }}">e</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'f' } ) }}">f</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'g' } ) }}">g</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'h' } ) }}">h</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'i' } ) }}">i</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'j' } ) }}">j</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'k' } ) }}">k</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'l' } ) }}">l</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'm' } ) }}">m</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'n' } ) }}">n</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'o' } ) }}">o</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'p' } ) }}">p</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'q' } ) }}">q</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'r' } ) }}">r</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 's' } ) }}">s</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 't' } ) }}">t</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'u' } ) }}">u</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'v' } ) }}">v</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'w' } ) }}">w</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'x' } ) }}">x</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'y' } ) }}">y</a></button>
+	  <button type="button" class="btn btn-default"><a href="{{ path('intra_annuaire_search', {'letter': 'z' } ) }}">z</a></button>
+
+  </div>
+
+  <hr>
+
+  {% block intramain_body %}
+  {% endblock %}
+
+{% endblock %}

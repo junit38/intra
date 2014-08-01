@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /Applications/mampstack-5.4.26-0/apps/rush/app/config/routing_dev.yml

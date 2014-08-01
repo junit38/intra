@@ -1,0 +1,37 @@
+{% extends "IntraModuleBundle::layout.html.twig" %}
+
+{% block title %}
+  {{ parent() }}
+{% endblock %}
+
+{% block intramain_body %}
+
+	{% if activite is defined %}
+
+		{% if error is defined %}
+				<div class="alert alert-danger">{{ error }}</div>
+		{% endif %}
+
+		<div class="panel panel-default">
+		  <div class="panel-heading">{{ activite.getName() }}</div>
+		  <div class="panel-body">
+		  	<p><strong>Début:</strong> {{ activite.getDateDebutActivite()|date('d-m-Y') }}</p>
+				      	<p><strong>Fin:</strong> {{ activite.getDateFinActivite()|date('d-m-Y') }}</p>
+				      	<small>Inscription du {{ activite.getDateDebutInscription()|date('d-m-Y') }} au {{ activite.getDateFinInscription()|date('d-m-Y') }}</small>
+				      	<hr>
+			{% if not module.getInscrit().contains(app.user) %}
+				<p>Inscrivez vous au module pour vous inscrire à l'activité</p>
+		  	{% elseif activite.getInscrit().contains(app.user) %}
+		   		<span class="glyphicon glyphicon-minus"></span><a href="{{ path('intra_module_desinscription_activite', {'id' : activite.getId()}) }}"> Se desinscrire</a>
+		    {% elseif activite.getDateDebutInscription()|date("m/d/Y") <= "now"|date("m/d/Y") 
+		    and activite.getDateFinInscription()|date("m/d/Y") >= "now"|date("m/d/Y") %}
+		    	<span class="glyphicon glyphicon-plus"></span><a href="{{ path('intra_module_inscription_activite', {'id' : activite.getId()}) }}"> S'inscrire</a>
+		    {% else %}
+		    	<p>Vous n'etes pas le délai d'inscription</p>  	
+		    {% endif %}
+		  </div>
+		</div>
+
+	{% endif %}
+
+{% endblock %}
